@@ -1,7 +1,15 @@
 % Kompresi audio dengan menggunakan DCT (Discrete Cosine Transform)
+% Pemrosesan Sinyal Multimedia 02
+
+% Dibuat oleh:
+% Kelompok 8
+% Daffa Rizkyandri - 2206829194
+% Surya Dharmasaputra S.  - 2206827825
+% Valentino Farish Adrian - 2206825896
 
 % Load file audio
 [audio, fs] = audioread('StereoTest.wav'); %fs = frequency sampling
+disp('File inserted, will be compressed soon...');
 
 % Set parameters
 segmentationLength = 0.1; % 100 ms
@@ -42,12 +50,14 @@ for z = 1:segmentationTotal
     % Store in compressed audio
     audioCompressed(startIndex:endIndex) = signalNew;
 end
+disp('compression finished. Saving in a new file...');
 
 % Normalisasi audio agar berada dalam rentang [-1, 1]
 audioCompressed = audioCompressed / max(abs(audioCompressed));
 
 % Save audio yang sudah dikompres
 audiowrite('newTest.wav', audioCompressed, fs);
+disp('Processed finish, enjoy your compressed audio :)');
 
 % Fungsi DCT
 function y = dctFormula(x)
