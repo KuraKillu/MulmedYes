@@ -8,12 +8,12 @@
 % Valentino Farish Adrian - 2206825896
 
 % Load file audio
-[audio, fs] = audioread('StereoTest.wav'); %fs = frequency sampling
+[audio, fs] = audioread('Before.wav'); %fs = frequency sampling
 disp('File inserted, will be compressed soon...');
 
 % Set parameters
 segmentationLength = 0.1; % 100 ms
-CR = 70; % Compression ratio (persentase koefisien yang dipertahankan)
+CR = 25; % Compression ratio (persentase koefisien yang dipertahankan)
 
 % Membagi total panjang audio dengan panjang segmentasi lalu dibulatkan ke
 % bawah untuk mendapatkan jumlah pembagian
@@ -56,7 +56,7 @@ disp('compression finished. Saving in a new file...');
 audioCompressed = audioCompressed / max(abs(audioCompressed));
 
 % Save audio yang sudah dikompres
-audiowrite('newTest.wav', audioCompressed, fs);
+audiowrite('Compressed.wav', audioCompressed, fs);
 disp('Processed finish, enjoy your compressed audio :)');
 
 % Fungsi DCT
