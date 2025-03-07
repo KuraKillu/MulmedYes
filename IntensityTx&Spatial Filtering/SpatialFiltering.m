@@ -6,7 +6,7 @@ image = imread('image.jpg');
 
 % Parameter untuk filter
 filterSize = [15 15]; % Ukuran array dari filter Mean
-spatialSharpness = 0.8; % Konstanta penajaman Laplacian
+spatialSharpness = 1; % Konstanta penajaman Laplacian
 
 % Membuat filter mean dan laplace
 filterMean = fspecial('average', filterSize);
@@ -33,7 +33,6 @@ end
 filteredLaplacian = uint8(filteredLaplacian);
 
 % Menampilkan gambar
-figure;
-subplot(1,3,1), imshow(image), title('Gambar Asli'); 
-subplot(1,3,2), imshow(filteredMean), title('Mean Filter (Blur)');
-subplot(1,3,3), imshow(filteredLaplacian), title('Laplacian Filter (Sharpened)');
+figure, imshow(image), title('Gambar Asli'); 
+figure, imshow(filteredMean), title('Mean Filter (Blur)');
+figure, imshow(filteredLaplacian), title('Laplacian Filter (Sharpened)');
