@@ -1,3 +1,8 @@
+% Kelompok 8
+% Muhammad Daffa Rizkyandri (2206829194)
+% Surya Dharmasaputra Soeroso (2206827825)
+% Valentino Farish Adrian (2206825896)
+
 clear;
 close all;
 
